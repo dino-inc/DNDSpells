@@ -15971,7 +15971,7 @@ var spells = [
   },
   {
     "name": "Windwall",
-    "desc": "<p> hen you cast this spell create a 40 foot long, 15 foot tall, 5 foot wide wall of rushing wind.</p> <p>\n\nRanged attack rolls between creatures on different sides of this wall automatically miss if the roll is less than your spell save DC + the spell\u2019s level + 3.\n\nThe wall is difficult terrain, when a creature tries to walk through the wall it must make a strength saving throw. On a failure the creature must take 4d8 slashing damage or be pushed back 10 feet.\n\nAfter 1 round, this spell ends at the start of your next turn.</p>",
+    "desc": "<p> When you cast this spell create a 40 foot long, 15 foot tall, 5 foot wide wall of rushing wind.</p> <p>\n\nRanged attack rolls between creatures on different sides of this wall automatically miss if the roll is less than your spell save DC + the spell\u2019s level + 3.\n\nThe wall is difficult terrain, when a creature tries to walk through the wall it must make a strength saving throw. On a failure the creature must take 4d8 slashing damage or be pushed back 10 feet.\n\nAfter 1 round, this spell ends at the start of your next turn.</p>",
     "range": "60ft",
     "ritual": false,
     "duration": "Concentration, up to 2 rounds",
