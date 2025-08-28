@@ -143,11 +143,11 @@
         -webkit-border-radius: .5em;
         -moz-border-radius: .5em;
         border-radius: .5em;
-        color:purple;
+        color:rgb(16, 93, 62);
       }
 
       .filterbutton.selected {
-        background: purple;
+        background: rgb(31, 173, 116);
         color: white;
       }
 
@@ -190,9 +190,9 @@
   </head>
   <body>
     <div id="container">
-      <h1>D&amp;D 5e Spellbook Generator</h1>
-      <h2>Spellbook</h2>
+      <h1>Fortresses and Flumphs Spell List</h1>
       <div id="filters">
+      <!--
       <div class="filtercat">
         Load preset:
         <select id="presetselect">
@@ -216,12 +216,15 @@
           <option value="all">All</option>
         </select>
       </div>
+      -->
       <div class="filtercat">
-        <a id="emptyspellbook" class="filterbutton">Empty Spellbook</a><br/>
+        <a id="emptyspellbook" class="filterbutton"><p style="color: red;">Unselect All Spells</p></a>
       </div>
+      <!--
       <div class="filtercat">
         <a id="generate" class="filterbutton" target="_blank">Generate printable PDF! (opens in new window)</a><br/>
       </div>
+      -->
       <table id="selectedtable">
         <thead>
           <tr>
@@ -247,6 +250,7 @@
         </div>
         <div class="filtercat">
           <b>Source:</b> (<a id="clearsources" class="filterbutton">clear</a>)
+          <!--
           <a id="filterphb" class="filterbutton filtersource">PHB</a>
 	      <a id="filterasis" class="filterbutton filtersource">ASIS</a>
           <a id="filtereepc" class="filterbutton filtersource">EEPC</a>
@@ -261,6 +265,7 @@
 		  <a id="filterua70smt" class="filterbutton filtersource">UA70SMT</a>
 		  <a id="filteridrf" class="filterbutton filtersource">IDRF</a>
 		  <a id="filterua78do" class="filterbutton filtersource">UA78DO</a>
+      -->
 	          <a id="filterfnf" class="filterbutton filtersource selected">FNF</a>
 		  <a id="filterfnfv" class="filterbutton filtersource">FNFV</a>
         </div>
@@ -278,7 +283,7 @@
           <a id="filterwarlock" class="filterbutton filterclass">Warlock</a>
           <a id="filterritualcaster" class="filterbutton filterclass">Ritual Caster</a>
           <br/>
-
+        <!--
           Cleric Domain:
           <a id="filterknowledge" class="filterbutton filterdomain">Knowledge</a>
           <a id="filterlife" class="filterbutton filterdomain">Life</a>
@@ -310,6 +315,7 @@
           <a id="filterarchfey" class="filterbutton filterpatron">Archfey</a>
           <a id="filterfiend" class="filterbutton filterpatron">Fiend</a>
           <a id="filtergreatoldone" class="filterbutton filterpatron">Great Old One</a>
+        -->
         </div>
         <div class="filtercat">
           <b>School:</b> (<a id="clearschools" class="filterbutton filterschool">clear</a>)
