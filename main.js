@@ -73,7 +73,7 @@ $(document).ready(function() {
            filterOaths.size + filterPatrons.size) !== 0 &&
        !(intersects(sp.class, filterClasses) ||
          intersects(sp.cleric_domain, filterDomains) ||
-         intersects(sp.druid_circle, filterCircles) ||
+         intersects(sp.shaman_circle, filterCircles) ||
          intersects(sp.paladin_oath, filterOaths) ||
          intersects(sp.warlock_patron, filterPatrons))) return false;
 
@@ -138,6 +138,9 @@ $(document).ready(function() {
 
   $searchTable.on('aftertablesort', function() { refilter(); });
   refilter();
+
+
+
 
   // Hovering description.
   var $floater = $('#floater');
@@ -209,6 +212,17 @@ $(document).ready(function() {
     updateSelected();
     refilter();
   });
+                                                                                      /* OVER HERE __________________________________
+  $searchTableBody.find('.spell').on('contextmenu', function(e) {
+    e.preventDefault();
+
+    const $spell = $(this);
+
+    const spell = $spell.data('sp');
+
+  alert(`${spell.name}`);
+  });
+*/
 
   // Load from querystring.
   if (window.location.search !== "") {
@@ -361,7 +375,7 @@ $(document).ready(function() {
   319, 321, 322, 324, 328, 334, 337, 345, 347, 351, 352, 355, 356, 364, 371,
   378, 384, 385, 399, 402, 411, 413]);
 
-  addPreset('druid', 'Druid Base', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32, 38, 43,
+  addPreset('shaman', 'Shaman Base', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32, 38, 43,
   47, 51, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92, 94, 99, 102, 103,
   109, 110, 116, 121, 126, 127, 128, 129, 130, 132, 134, 137, 139, 145, 149,
   150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172, 175, 177, 181, 182,
@@ -372,7 +386,7 @@ $(document).ready(function() {
   374, 375, 376, 379, 380, 382, 384, 387, 392, 396, 397, 398, 400, 401, 402,
   403, 406, 407, 408]);
 
-  addPreset('druidarctic', 'Druid: Arctic', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
+  addPreset('shamanarctic', 'Shaman: Arctic', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
   38, 43, 47, 51, 63, 67, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92, 94,
   99, 102, 103, 109, 110, 116, 121, 126, 127, 128, 129, 130, 132, 134, 137, 139,
   145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172, 175, 177,
@@ -383,7 +397,7 @@ $(document).ready(function() {
   360, 361, 372, 374, 375, 376, 379, 380, 382, 384, 387, 392, 396, 397, 398,
   400, 401, 402, 403, 406, 407, 408]);
 
-  addPreset('druidcoast', 'Druid: Coast', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
+  addPreset('shamancoast', 'Shaman: Coast', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
   38, 43, 47, 51, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92, 94, 99,
   102, 103, 109, 110, 116, 121, 126, 127, 128, 129, 130, 132, 134, 137, 139,
   145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172, 175, 177,
@@ -394,7 +408,7 @@ $(document).ready(function() {
   357, 360, 361, 372, 374, 375, 376, 379, 380, 382, 384, 387, 392, 396, 397,
   398, 400, 401, 402, 403, 406, 407, 408]);
 
-  addPreset('druiddesert', 'Druid: Desert', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
+  addPreset('shamandesert', 'Shaman: Desert', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
   38, 42, 43, 47, 51, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92, 93,
   94, 99, 102, 103, 109, 110, 116, 121, 126, 127, 128, 129, 130, 132, 134, 137,
   139, 145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172, 175,
@@ -405,7 +419,7 @@ $(document).ready(function() {
   357, 360, 361, 372, 374, 375, 376, 379, 380, 382, 384, 387, 392, 396, 397,
   398, 400, 401, 402, 403, 406, 407, 408]);
 
-  addPreset('druidforest', 'Druid: Forest', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
+  addPreset('shamanforest', 'Shaman: Forest', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
   38, 43, 47, 51, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92, 94, 99,
   102, 103, 109, 110, 116, 118, 121, 126, 127, 128, 129, 130, 132, 134, 137,
   139, 145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172, 175,
@@ -416,7 +430,7 @@ $(document).ready(function() {
   357, 360, 361, 372, 374, 375, 376, 379, 380, 382, 384, 387, 392, 396, 397,
   398, 400, 401, 402, 403, 406, 407, 408]);
 
-  addPreset('druidgrassland', 'Druid: Grassland', [1, 7, 8, 9, 12, 14, 25, 29,
+  addPreset('shamangrassland', 'Shaman: Grassland', [1, 7, 8, 9, 12, 14, 25, 29,
   31, 32, 38, 43, 47, 51, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92,
   94, 99, 102, 103, 109, 110, 116, 118, 121, 125, 126, 127, 128, 129, 130, 132,
   134, 137, 139, 145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170,
@@ -427,7 +441,7 @@ $(document).ready(function() {
   350, 355, 356, 357, 360, 361, 372, 374, 375, 376, 379, 380, 382, 384, 387,
   392, 396, 397, 398, 400, 401, 402, 403, 406, 407, 408]);
 
-  addPreset('druidmountain', 'Druid: Mountain', [1, 7, 8, 9, 12, 14, 25, 29, 31,
+  addPreset('shamanmountain', 'Shaman: Mountain', [1, 7, 8, 9, 12, 14, 25, 29, 31,
   32, 38, 43, 47, 51, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92, 94,
   99, 102, 103, 109, 110, 116, 121, 126, 127, 128, 129, 130, 132, 134, 137, 139,
   145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172, 175, 177,
@@ -438,7 +452,7 @@ $(document).ready(function() {
   356, 357, 360, 361, 372, 374, 375, 376, 379, 380, 382, 384, 387, 392, 396,
   397, 398, 400, 401, 402, 403, 406, 407, 408]);
 
-  addPreset('druidswamp', 'Druid: Swamp', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
+  addPreset('shamanswamp', 'Shaman: Swamp', [1, 7, 8, 9, 12, 14, 25, 29, 31, 32,
   38, 43, 47, 51, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89, 92, 94, 99,
   101, 102, 103, 109, 110, 116, 121, 126, 127, 128, 129, 130, 132, 134, 137,
   139, 145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172, 175,
@@ -449,7 +463,7 @@ $(document).ready(function() {
   356, 357, 360, 361, 372, 374, 375, 376, 379, 380, 382, 384, 387, 392, 396,
   397, 398, 400, 401, 402, 403, 406, 407, 408]);
 
-  addPreset('druidunderdark', 'Druid: Underdark', [1, 7, 8, 9, 12, 14, 25, 29,
+  addPreset('shamanunderdark', 'Shaman: Underdark', [1, 7, 8, 9, 12, 14, 25, 29,
   31, 32, 38, 43, 47, 51, 59, 63, 68, 69, 73, 75, 77, 81, 83, 86, 87, 88, 89,
   92, 94, 99, 102, 103, 109, 110, 116, 121, 126, 127, 128, 129, 130, 132, 134,
   137, 139, 145, 149, 150, 153, 154, 159, 160, 161, 163, 166, 169, 170, 172,
@@ -522,7 +536,7 @@ $(document).ready(function() {
 
   $('#filtersorcerer').bind('click', function() { toggleFilter(this, filterClasses, 'Sorcerer') });
   $('#filterwizard').bind('click', function() { toggleFilter(this, filterClasses, 'Wizard') });
-  $('#filterdruid').bind('click', function() { toggleFilter(this, filterClasses, 'Druid') });
+  $('#filtershaman').bind('click', function() { toggleFilter(this, filterClasses, 'Shaman') });
   $('#filterranger').bind('click', function() { toggleFilter(this, filterClasses, 'Ranger') });
   $('#filtercleric').bind('click', function() { toggleFilter(this, filterClasses, 'Cleric') });
   $('#filterpaladin').bind('click', function() { toggleFilter(this, filterClasses, 'Paladin') });
